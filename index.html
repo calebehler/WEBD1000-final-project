@@ -9,14 +9,14 @@
 
 <body>
     <!-- Header -->
-    <section>
-        <header>
+    <section class="section-container" id="header-grid">
+        <header class="item">
             <h1>World Trivia</h1>
         </header>
     </section>
 
     <!-- Navbar -->
-    <section>
+    <section id="navbar-section">
         <div class="section-container" id = "navbar-grid">
             <div class="item navbar-link">Link 1</div>
             <div class="item navbar-link">Link 2</div>
@@ -30,48 +30,142 @@
     <!-- Homepage (Intro Section) -->
     <section>
         <div class="section-container" id="intro-grid">
-            <div class="item" id="intro-heading"><h2>Introduction</h2></div>
-            <div class="item" id="intro-p"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi, debitis vel consequuntur suscipit doloribus in? Perspiciatis quidem ratione soluta cupiditate totam ex, velit assumenda, cum, fuga ipsam repellendus itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos quia praesentium reprehenderit id ratione quisquam iusto consectetur natus. Minus, qui laudantium ipsum omnis iure cumque eveniet ratione tenetur perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos modi facilis vel deleniti qui amet laboriosam labore sapiente veniam, provident debitis voluptate repellat vitae sunt voluptas iste minus incidunt ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius quae, accusantium quos voluptatem blanditiis numquam ullam, facilis hic quaerat fuga. Vitae cum eveniet suscipit alias? Sunt deleniti porro aliquid.</p></div>
-            <div class="item" id="intro-img"><img src="images/Lumbridge.png"></div>
+            <h2 class="item" id="intro-heading">Introduction</h2>
+            <p class="item" id="intro-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi, debitis vel consequuntur suscipit doloribus in? Perspiciatis quidem ratione soluta cupiditate totam ex, velit assumenda, cum, fuga ipsam repellendus itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos quia praesentium reprehenderit id ratione quisquam iusto consectetur natus. Minus, qui laudantium ipsum omnis iure cumque eveniet ratione tenetur perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos modi facilis vel deleniti qui amet laboriosam labore sapiente veniam, provident debitis voluptate repellat vitae sunt voluptas iste minus incidunt ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius quae, accusantium quos voluptatem blanditiis numquam ullam, facilis hic quaerat fuga. Vitae cum eveniet suscipit alias? Sunt deleniti porro aliquid.</p>
+            <div class="item" id="intro-img"><img src="images/Lumbridge.png">
         </div>
     </section>
 
     <!-- Trivia Facts Section -->
+     <!-- TODO: make this into a carousel-->
     <section>
         <div class="section-container" id="trivia-grid">
+
             <h2 class="item" id="trivia-heading">Trivia Facts</h2>
+            
             <div class="item" id="trivia-card-grid">
                 <h3 class="item" id="trivia-card-heading">Fact #1</h3>
-                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea!</p>
-                <div class="item" id="trivia-card-img">image goes here</div>
+                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis cupiditate porro ea dolore in quidem adipisci! Odit neque quia dolor ea optio, accusantium dolorem ducimus cupiditate harum, alias aspernatur?</p>
+                <div class="item" id="trivia-card-img"><img src="/images/twinflame.png"></div>
             </div>
 
+            <div class="item" id="trivia-card-grid">
+                <h3 class="item" id="trivia-card-heading">Fact #1</h3>
+                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ratione error corrupti amet ipsa eos optio vitae rerum autem omnis aliquid, provident tenetur sint rem corporis atque expedita sequi! Cupiditate.</p>
+                <div class="item" id="trivia-card-img"><img src="/images/fairy.png"></div>
+            </div>
 
-
+            <div class="item" id="trivia-card-grid">
+                <h3 class="item" id="trivia-card-heading">Fact #1</h3>
+                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia earum maiores quo consectetur pariatur esse? Animi accusamus dicta nemo quos dignissimos magni, voluptatibus repellendus laboriosam laudantium? Non culpa accusantium quo.</p>
+                <div class="item" id="trivia-card-img"><img src="/images/bloodhound.png"></div>
+            </div>
 
         </div>
+
+        
     </section>
 
-    <!-- Categories Section-->
+    <!-- Categories Section with links-->
     <section>
-        <div>
-            <h2>Categories</h2>
+
+        <div class="section-container" id="categories-grid">
+            
+            <h2 class="item" id="categories-heading">Categories</h2>
+            <div class="item categories-card" id="category-1"><h3>Link #1</h3></div>
+            <div class="item categories-card" id="category-2"><h3>Link #2</h3></div>
+            <div class="item categories-card" id="category-3"><h3>Link #3</h3></div>
+            <div class="item categories-card" id="category-4"><h3>Link #4</h3></div>
+
         </div>
+
     </section>
 
     <!-- Top Scores Table-->
     <section>
-        <h2>Top Scores</h2>
+
+        <div class="section-container" id="scores-grid">
+            <h2 class="item">Top Scores</h2>
+            <table class="item">
+
+                <tr>
+                    <th id="table-rank">Rank</th>
+                    <th id="table-name">Name</th>
+                    <th id="table-score">Score</th>
+                    <th id="table-country">Country</th>
+                    <th id="table-category">Category</th>
+                    <th id="table-date">Date</th>
+
+                </tr>
+
+                <tr>
+                    <th>1</th>
+                    <td>Name</td>
+                    <td>9999</td>
+                    <td>Canada</td>
+                    <td>Bosses</td>
+                    <td>25/12/2025</td>
+                </tr>
+
+                <tr>
+                    <th>2</th>
+                    <td>Name</td>
+                    <td>9999</td>
+                    <td>Canada</td>
+                    <td>Bosses</td>
+                    <td>25/12/2025</td>
+                </tr>
+
+                <tr>
+                    <th>3</th>
+                    <td>Name</td>
+                    <td>9999</td>
+                    <td>Canada</td>
+                    <td>Bosses</td>
+                    <td>25/12/2025</td>
+                </tr>
+
+                <tr>
+                    <th>4</th>
+                    <td>Name</td>
+                    <td>9999</td>
+                    <td>Canada</td>
+                    <td>Bosses</td>
+                    <td>25/12/2025</td>
+                </tr>
+
+                <tr>
+                    <th>5</th>
+                    <td>Name</td>
+                    <td>9999</td>
+                    <td>Canada</td>
+                    <td>Bosses</td>
+                    <td>25/12/2025</td>
+                </tr>
+
+                </table>
+
+            </table>
+
+        </div>
+        
     </section>
 
     <!-- Subscribe Section-->
     <section>
-        <h2>Subscribe</h2>
+       
+        <div class="section-container" id="subscribe-grid">
+            <h2 class="item">Subscribe</h2>
+        </div>
+
     </section>
 
     <!-- Contact Section-->
-    <section">
-        <h2>Contact Us</h2>
+    <section>
+        <div class="section-container" id="contact-grid">
+            <h2 class="item">Contact Us</h2>
+        </div>
+
     </section>
 
 </body>
