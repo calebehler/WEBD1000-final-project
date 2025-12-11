@@ -1,172 +1,495 @@
+<!--
+WEBD1000 Final Project
+Caleb Ehler
+W0525350
+
+All images sourced from the Old School Runescape Wiki, from this directory:
+https://oldschool.runescape.wiki/w/Category:Images
+
+Old School Runescape custom fonts sourced from the open source Runelite Github repository: 
+https://github.com/runelite/runelite/tree/master/runelite-client/src/main/resources/net/runelite/client/ui 
+
+AI Use: In this project I used AI to apply bootstrap styling to help make parts of the website more responsive for smaller devices. 
+I also used it to help implement and debug a Bootstrap version of the infinite carousel animation, as shown in the youtube video in class
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Trivia</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <!-- Header -->
-    <section class="section-container" id="header-grid">
-        <header class="item">
-            <h1>World Trivia</h1>
-        </header>
-    </section>
+    <header id="header" class="text-white py-5">
+
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold">Runescape Trivia</h1>
+        </div>
+    </header>
 
     <!-- Navbar -->
-    <section id="navbar-section">
-        <div class="section-container" id = "navbar-grid">
-            <div class="item navbar-link">Link 1</div>
-            <div class="item navbar-link">Link 2</div>
-            <div class="item navbar-link">Link 3</div>
-            <div class="item navbar-link">Link 4</div>
-            <div class="item navbar-link">Link 5</div>
-            <div class="item navbar-link">Link 6</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto w-100 justify-content-around">
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#intro">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#trivia">Trivia</a></li>
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#categories">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#scores">Scores</a></li>
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#subscribe">Subscribe</a></li>
+                    <li class="nav-item"><a class="nav-link fs-3 text-white" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </section>
+    </nav>
 
     <!-- Homepage (Intro Section) -->
-    <section>
-        <div class="section-container" id="intro-grid">
-            <h2 class="item" id="intro-heading">Introduction</h2>
-            <p class="item" id="intro-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi, debitis vel consequuntur suscipit doloribus in? Perspiciatis quidem ratione soluta cupiditate totam ex, velit assumenda, cum, fuga ipsam repellendus itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos quia praesentium reprehenderit id ratione quisquam iusto consectetur natus. Minus, qui laudantium ipsum omnis iure cumque eveniet ratione tenetur perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos modi facilis vel deleniti qui amet laboriosam labore sapiente veniam, provident debitis voluptate repellat vitae sunt voluptas iste minus incidunt ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius quae, accusantium quos voluptatem blanditiis numquam ullam, facilis hic quaerat fuga. Vitae cum eveniet suscipit alias? Sunt deleniti porro aliquid.</p>
-            <div class="item" id="intro-img"><img src="images/Lumbridge.png">
+    <section id="intro" class="py-5">
+        <div class="container bg-dark bg-gradient shadow-lg">
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-3">Introduction</h2>
+                    <p class="lead fw-medium fs-4 text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi, debitis vel consequuntur suscipit doloribus in? 
+                        Perspiciatis quidem ratione soluta cupiditate totam ex, velit assumenda, cum, fuga ipsam repellendus itaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Culpa quos quia praesentium reprehenderit id ratione quisquam iusto consectetur natus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Nemo, voluptatibus iste dolor quod vero deleniti amet qui, fugiat, possimus magnam temporibus impedit autem laudantium voluptates aspernatur consequuntur quisquam! 
+                        Sint, eos?
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9 overflow-hidden shadow">
+                        <img src="images/map.png" class="w-100 h-100 object-fit-fill" alt="World Map">
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Trivia Facts Section -->
-     <!-- TODO: make this into a carousel-->
-    <section>
-        <div class="section-container" id="trivia-grid">
+    <section id="trivia" class="py-5">
+        <div class="container bg-dark shadow-lg">
 
-            <h2 class="item" id="trivia-heading">Trivia Facts</h2>
+            <h2 class="display-5 fw-bold text-center py-4">Trivia Facts</h2>
             
-            <div class="item" id="trivia-card-grid">
-                <h3 class="item" id="trivia-card-heading">Fact #1</h3>
-                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nobis cupiditate porro ea dolore in quidem adipisci! Odit neque quia dolor ea optio, accusantium dolorem ducimus cupiditate harum, alias aspernatur?</p>
-                <div class="item" id="trivia-card-img"><img src="/images/twinflame.png"></div>
-            </div>
+            <!-- Infinite Scrolling Carousel -->
+            <div class="trivia-carousel-wrapper">
+                
+                <div class="trivia-carousel mb-4">
 
-            <div class="item" id="trivia-card-grid">
-                <h3 class="item" id="trivia-card-heading">Fact #1</h3>
-                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ratione error corrupti amet ipsa eos optio vitae rerum autem omnis aliquid, provident tenetur sint rem corporis atque expedita sequi! Cupiditate.</p>
-                <div class="item" id="trivia-card-img"><img src="/images/fairy.png"></div>
-            </div>
+                    <!-- Trivia Card 1 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-1">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/OccultAltar.webp" class="w-100 h-100 object-fit-contain p-3" alt="Occult Altar">
+                            </div>
+                            <div class="card-body text-light">
+                                <h3 class="card-title">Trivia Fact #1</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="item" id="trivia-card-grid">
-                <h3 class="item" id="trivia-card-heading">Fact #1</h3>
-                <p class="item" id="trivia-card-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas rem ut debitis sunt nobis magnam perferendis eaque qui amet tempore quos et, vitae iusto suscipit! Dicta quo velit ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia earum maiores quo consectetur pariatur esse? Animi accusamus dicta nemo quos dignissimos magni, voluptatibus repellendus laboriosam laudantium? Non culpa accusantium quo.</p>
-                <div class="item" id="trivia-card-img"><img src="/images/bloodhound.png"></div>
+                    <!-- Trivia Card 2 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-2">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/GeneralBentnoze.gif" class="w-100 h-100 object-fit-contain p-3" alt="General Bentnoze">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #2</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trivia Card 3 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-3">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/HornlessUnicorn.gif" class="w-100 h-100 object-fit-contain p-3" alt="Hornless Unicorn">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #3</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trivia Card 4 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-4">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Cat.gif" class="w-100 h-100 object-fit-contain p-3" alt="Cat">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #4</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trivia Card 5 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-5">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Capybara.gif" class="w-100 h-100 object-fit-contain p-3" alt="Capybara">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #5</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trivia Card 6 -->
+                    <div class="trivia-card">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-6">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Crob.gif" class="w-100 h-100 object-fit-contain p-3" alt="Crab">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #6</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate cards for seamless loop -->
+                    <!-- Aria-Hidden so they aren't read twice by screen readers -->
+                    <!-- DUPLICATE Trivia Card 1 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-1">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/OccultAltar.webp" class="w-100 h-100 object-fit-contain p-3" alt="Occult Altar">
+                            </div>
+                            <div class="card-body text-light">
+                                <h3 class="card-title">Trivia Fact #1</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE Trivia Card 2 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-2">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/GeneralBentnoze.gif" class="w-100 h-100 object-fit-contain p-3" alt="General Bentnoze">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #2</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE Trivia Card 3 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-3">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/HornlessUnicorn.gif" class="w-100 h-100 object-fit-contain p-3" alt="Hornless Unicorn">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #3</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE Trivia Card 4 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-4">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Cat.gif" class="w-100 h-100 object-fit-contain p-3" alt="Cat">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #4</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE Trivia Card 5 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-5">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Capybara.gif" class="w-100 h-100 object-fit-contain p-3" alt="Capybara">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #5</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE Trivia Card 6 -->
+                    <div class="trivia-card" aria-hidden="true">
+                        <div class="card h-100 d-flex flex-column shadow-sm bg-dark bg-gradient text-light" id="trivia-card-6">
+                            <div class="ratio ratio-4x3">
+                                <img src="/images/Crob.gif" class="w-100 h-100 object-fit-contain p-3" alt="Crab">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Trivia Fact #6</h3>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni exercitationem recusandae temporibus numquam rerum quasi necessitatibus molestiae quae ratione laudantium voluptatum quas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-5 bg-dark">
+        <div class="container-fluid">
+            <h2 class="display-5 fw-bold text-center mb-5">Categories</h2>
+
+            <div class="row g-4 pb-4 bg-gradient shadow-lg">
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-img card category-card" id="category-card-1">    
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h3 class="card-title text-center category-heading">Category #1</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-img card category-card" id="category-card-2">    
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h3 class="card-title text-center category-heading">Category #2</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-img card category-card" id="category-card-3">    
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h3 class="card-title text-center category-heading h3">Category #3</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="bg-img card category-card" id="category-card-4">    
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h3 class="card-title text-center category-heading">Category #4</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
-
-        
     </section>
 
-    <!-- Categories Section with links-->
-    <section>
-
-        <div class="section-container" id="categories-grid">
-            
-            <h2 class="item" id="categories-heading">Categories</h2>
-            <div class="item categories-card" id="category-1"><h3>Link #1</h3></div>
-            <div class="item categories-card" id="category-2"><h3>Link #2</h3></div>
-            <div class="item categories-card" id="category-3"><h3>Link #3</h3></div>
-            <div class="item categories-card" id="category-4"><h3>Link #4</h3></div>
-
-        </div>
-
-    </section>
-
-    <!-- Top Scores Table-->
-    <section>
-
-        <div class="section-container" id="scores-grid">
-            <h2 class="item">Top Scores</h2>
-            <table class="item">
-
-                <tr>
-                    <th id="table-rank">Rank</th>
-                    <th id="table-name">Name</th>
-                    <th id="table-score">Score</th>
-                    <th id="table-country">Country</th>
-                    <th id="table-category">Category</th>
-                    <th id="table-date">Date</th>
-
-                </tr>
-
-                <tr>
-                    <th>1</th>
-                    <td>Name</td>
-                    <td>9999</td>
-                    <td>Canada</td>
-                    <td>Bosses</td>
-                    <td>25/12/2025</td>
-                </tr>
-
-                <tr>
-                    <th>2</th>
-                    <td>Name</td>
-                    <td>9999</td>
-                    <td>Canada</td>
-                    <td>Bosses</td>
-                    <td>25/12/2025</td>
-                </tr>
-
-                <tr>
-                    <th>3</th>
-                    <td>Name</td>
-                    <td>9999</td>
-                    <td>Canada</td>
-                    <td>Bosses</td>
-                    <td>25/12/2025</td>
-                </tr>
-
-                <tr>
-                    <th>4</th>
-                    <td>Name</td>
-                    <td>9999</td>
-                    <td>Canada</td>
-                    <td>Bosses</td>
-                    <td>25/12/2025</td>
-                </tr>
-
-                <tr>
-                    <th>5</th>
-                    <td>Name</td>
-                    <td>9999</td>
-                    <td>Canada</td>
-                    <td>Bosses</td>
-                    <td>25/12/2025</td>
-                </tr>
-
+    <!-- Top Scores Section -->
+    <section id="scores" class="py-5">
+        <div class="container bg-dark">
+            <h2 class="display-5 fw-bold text-center py-3">Top Scores</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="scores-thead">
+                        <tr>
+                            <th class="scores-thead">Rank</th>
+                            <th class="scores-thead">Name</th>
+                            <th class="scores-thead">Score</th>
+                            <th class="scores-thead">Country</th>
+                            <th class="scores-thead">Category</th>
+                            <th class="scores-thead">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><a href="#">Name</a></td>
+                            <td>9999</td>
+                            <td>Canada</td>
+                            <td>Bosses</td>
+                            <td>25/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td><a href="#">Name</a></td>
+                            <td>9999</td>
+                            <td>Canada</td>
+                            <td>Bosses</td>
+                            <td>25/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><a href="#">Name</a></td>
+                            <td>9999</td>
+                            <td>Canada</td>
+                            <td>Bosses</td>
+                            <td>25/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><a href="#">Name</a></td>
+                            <td>9999</td>
+                            <td>Canada</td>
+                            <td>Bosses</td>
+                            <td>25/12/2025</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td><a href="#">Name</a></td>
+                            <td>9999</td>
+                            <td>Canada</td>
+                            <td>Bosses</td>
+                            <td>25/12/2025</td>
+                        </tr>
+                    </tbody>
                 </table>
-
-            </table>
-
+            </div>
         </div>
-        
     </section>
 
-    <!-- Subscribe Section-->
-    <section>
-       
-        <div class="section-container" id="subscribe-grid">
-            <h2 class="item">Subscribe</h2>
-        </div>
+    <!-- Subscribe Section -->
+    <section id="subscribe" class="py-5 bg-dark bg-gradient text-white">
+        <div class="container">
+            <h2 class="display-4 fw-bolder text-center mb-5">Subscribe</h2>
+            
+            <div class="row g-4 mx-1 bg-black pb-4">
 
+                <div class="col-md-4 col-12">
+
+                    <div class="card bg-dark text-white h-100 shadow subscribe-card" id="subscribe-card-bronze">
+                        <div class="card-body d-flex flex-column h-100">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-8 d-flex align-items-center justify-content-center">
+                                    <h3 class="card-title h3 subscribe-heading mb-0">Bronze Plan</h3>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="/images/Bronze.png" class="img-fluid subscribe-img" alt="Bronze">
+                                </div>
+                            </div>
+
+                            <div class="flex-grow-1">
+                                <p class="card-text mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem natus tempora magnam aspernatur autem quidem officiis dicta, non porro dolor in, cupiditate nam ipsam enim id animi, officia ullam nobis.</p>
+                            </div>
+
+                            <div class="mt-3">
+                                <button class="btn btn-info w-100 subscribe-button" id="bronze-button" aria-label="Subscribe to Bronze Plan">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 col-12">
+
+                    <div class="card bg-dark text-white h-100 shadow subscribe-card" id="subscribe-card-rune">
+                        <div class="card-body d-flex flex-column h-100">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-8 d-flex align-items-center justify-content-center">
+                                    <h3 class="card-title h3 subscribe-heading mb-0">Rune Plan</h3>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="/images/Rune.png" class="img-fluid subscribe-img" alt="Rune">
+                                </div>
+                            </div>
+
+                            <div class="flex-grow-1">
+                                <p class="card-text mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem natus tempora magnam aspernatur autem quidem officiis dicta, non porro dolor in, cupiditate nam ipsam enim id animi, officia ullam nobis.</p>
+                            </div>
+
+                            <div class="mt-3">
+                                <button class="btn w-100 subscribe-button" id="rune-button" aria-label="Subscribe to Rune Plan">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4 col-12">
+
+                    <div class="card bg-dark text-white h-100 shadow subscribe-card" id="subscribe-card-gilded">
+                        <div class="card-body d-flex flex-column h-100">
+                            <div class="row align-items-center mb-2">
+                                <div class="col-8 d-flex align-items-center justify-content-center">
+                                    <h3 class="card-title h3 subscribe-heading mb-0">Gilded Plan</h3>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="/images/Gilded.png" class="img-fluid subscribe-img" alt="Gilded">
+                                </div>
+                            </div>
+
+                            <div class="flex-grow-1">
+                                <p class="card-text mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem natus tempora magnam aspernatur autem quidem officiis dicta, non porro dolor in, cupiditate nam ipsam enim id animi, officia ullam nobis.</p>
+                            </div>
+
+                            <div class="mt-3">
+                                <button class="btn btn-info w-100 subscribe-button" id="gilded-button" aria-label="Subscribe to Gilded Plan">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section-->
-    <section>
-        <div class="section-container" id="contact-grid">
-            <h2 class="item">Contact Us</h2>
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            
+            <div class="row justify-content-center">
 
+                <div class="col-md-6 col-lg-5 bg-dark bg-gradient py-3 text-light fw-bold">
+                    <h2 class="display-5 fw-bold text-center mb-3">Contact Us</h2>
+                    <h3 class="text-center">Email: <span class="link-light"><a href="#">worldtriva@email.com</a></span></h3>
+                    <h3 class="text-center">Phone: (902) 789-1234</h3>
+                    
+
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input id="name" name="name" type="text" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input id="email" name="email" type="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message:</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <input type="submit" value="Submit" class="btn btn-light btn-lg fs-2 py-1" id="contact-button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-black bg-gradient text-white text-center py-4 justify-content-center">
+        <div class="container">
+            <p>&copy; 2025 Runescape World Trivia. All images and characters depicted are properties of Jagex Ltd.</p>
+        </div>
+    </footer>
+
+    
 </body>
 </html>

@@ -1,203 +1,240 @@
-body{
-    background-color: steelblue;
-    border: 2px solid black;
-    
+@font-face{
+    font-family: runescape;
+    src: url("/fonts/runescape.ttf") format('truetype');
+}
+@font-face {
+    font-family: runescape-bold;
+    src: url("/fonts/runescape_bold.ttf");
+}
+@font-face {
+    font-family: runescape-small;
+    src: url("/fonts/runescape_small.ttf");
 }
 
-section{
-    border: 1px solid white;
-    margin: 8px;
+/* BOOTSTRAP OVERRIDES */
+
+h1, h2, h3, h4{
+    font-family: runescape-bold;
+    color: yellow;
+}
+.nav-item:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+    color: yellow !important;
+}
+.nav-item:hover>a{
+    color: yellow !important;
 }
 
-/* template 6x6 grid container */
-.section-container{
-    display: grid;
-    margin: 4px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.item{
-    border: 2px solid red;
-    grid-column: 1;
-    max-width: 100%;
-    max-height: 100%;
-    align-content: center;
-    margin: 4px;
-}
-
-img{
-    max-width: inherit;
-    max-height: inherit;
-}
-
-/* HEADER SECTION */
-#header-grid{
-    grid-template-rows: 1fr;
-}
-#header-grid>header{
-    grid-column: 1 /span 6;
-}
-h1{
-    text-align: center;
-    font-size: 52px;
-}
-h2{
-    text-align: center;
-    font-size: 38px;
-}
-h3{
-    font-size: 32px;
-}
-
-
-/* NAVBAR SECTION */
-#navbar-section{
-    position: sticky;
-    top:0;
-    overflow: hidden;
-    background-color: black;
+tbody>tr:hover>*{
+    background-color: black !important;
     color: white;
-}
-#navbar-grid{
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-.navbar-link{
-    font-size: 42px;
-    grid-column: auto;
-    grid-row: 1 / span 3;
+    font-weight: bold;
 }
 
 
-/* INTRODUCTION SECTION */
-/* 3x3 grid */
-#intro-grid{
-    grid-template-rows: 1fr 1fr 1fr;
-}
+/*Custom Styles*/
 
-#intro-heading{
-    grid-column: 1 / span 4;
-    grid-row: 1;  
-    font-size: 40px;
-}
-#intro-img{
-    grid-column: 5 /span 6;
-    grid-row: 1 / span 6;
-}
-
-#intro-p{
-    grid-column: 1 / span 4;
-    grid-row: 2 / span 3;
-}
-
-/*  TRIVIA SECTION */
-#trivia-grid{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 2fr;
-}
-
-#trivia-heading{
-    grid-column: 1 / span 3;
-    grid-row: 1;
-}
-
-/* subgrid for each of the cards */
-#trivia-card-grid{
-    /* define how it operates in its parent grid first */
-    display: grid;
-    grid-column: auto;
-    /*then define it's own grid */
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.25fr 1fr;
-    border-color:aqua;
-}
-
-#trivia-card-heading{
-    grid-column: 1 /span 3;
-    grid-row: 1;
-}
-
-#trivia-card-p{
-    grid-column: 1;
-    grid-row: 2;
-}
-
-#trivia-card-img{
-    grid-column:2;
-    grid-row: 2 / span 3;
-}
-
-/* CATEGORIES SECTION */
-#categories-grid{
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+body{
+    background-color: #39697e;
+    background: linear-gradient(117deg,rgba(164, 215, 237, 1) 8%, rgba(101, 170, 199, 1) 26%, rgba(90, 139, 166, 1) 37%, rgba(85, 137, 163, 1) 47%, rgba(66, 131, 158, 1) 54%, rgba(87, 151, 179, 1) 65%, rgba(127, 192, 219, 1) 76%, rgba(129, 194, 222, 1) 90%);
 
 }
-#categories-heading{
-    grid-column: 1 /span 4;
-    grid-row: 1;
+
+#header{
+    background: #39697E;
+    background: radial-gradient(circle,rgba(57, 105, 126, 1) 0%, rgba(0, 21, 33, 1) 100%);
+}
+
+/* Navbar */
+
+#navbarNav{
+    font-family: runescape-bold;
+}
+
+
+/* Infinite Carousel */
+.trivia-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+
+}
+
+.trivia-carousel {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: black;
     
 }
 
-.categories-card{
-    grid-column: auto;
-    grid-row: 2 /span 6;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.471);
-    background-blend-mode: darken;
-
+.trivia-card {
+    flex: 0 0 calc(33.333% - 1rem);
+    width: calc(100vw / 3 - 2rem);
+    max-width: 400px;
+    padding: 1em;
+    
 }
-.categories-card>h3{
-    border: 2px solid black;
+.card-body>h3{
     text-align: center;
-    font-size: xx-large;
-    color:  white;
-    max-height: inherit;
-    border: none;    
+}
+.card-body{
+    
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#trivia-card-1:hover{
+    box-shadow: 0px 0px 5px 6px rgb(174, 0, 255) !important;
+}
+#trivia-card-2:hover{
+    box-shadow: 0px 0px 5px 6px rgb(255, 0, 0) !important;
+}
+#trivia-card-3:hover{
+    box-shadow: 0px 0px 5px 6px rgb(255, 227, 70) !important;
+}
+#trivia-card-4:hover{
+    box-shadow: 0px 0px 5px 6px rgb(0, 119, 255) !important;
+}
+#trivia-card-5:hover{
+    box-shadow: 0px 0px 5px 6px rgb(0, 175, 23) !important;
+}
+#trivia-card-6:hover{
+    box-shadow: 0px 0px 5px 6px rgb(255, 153, 0) !important;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.trivia-carousel-wrapper:hover .trivia-carousel {
+    animation-play-state: paused;
+}
+
+/* Categories Section */
+.category-card{
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.575);
+    background-blend-mode: darken;
+}
+.category-card:hover{
+    background-color: rgba(0, 0, 0, 0.048);
+    cursor: pointer;
+}
+.category-card:hover .category-heading{
+    font-size: 200%;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.836);
+    
+    
+}
+
+.category-heading{
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 4%;
+    background-blend-mode: darken;
+    transition-property: font-size;
+    transition-duration: 0.2s;
+    transition-delay: 0;
+    
 }
 
 
-#category-1{
-    background-image: url("/images/gwd.png");
+
+#category-card-1{
+    background-image: url("/images/royal.png");
 }
-#category-2{
+#category-card-2{
     background-image: url("/images/tob.png");
 }
-#category-3{
-    background-image: url("/images/wt.png");
-}
-#category-4{
+#category-card-3{
     background-image: url("/images/fish.png");
 }
-
-
-/* TOP SCORES SECTION*/
-#scores-grid{
-    grid-template-columns: auto;
+#category-card-4{
+    background-image: url("/images/wt.png");
 }
 
-table{
-    grid-row: 2 /span 6;
-    align-items: center;
-    text-align: center;
-    background-color: black;
+/* Top Scores Section */
+
+.scores-thead{
+    background-color: black !important;
+    color: yellow !important;
+}
+
+/* Subscribe Section */
+.subscribe-heading{
+    font-family: runescape-bold;
+    font-size: 250%;
+    
+}
+.subscribe-button{
+    font-size: x-large;
+    border: none;
+}
+.subscribe-button:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#subscribe-card-bronze:hover{
+    box-shadow: 0px 0px 5px 6px #804e3a  !important;
+}
+#subscribe-card-rune:hover{
+    box-shadow: 0px 0px 6px 6px #56acd1  !important;
+}
+#subscribe-card-gilded:hover{
+    box-shadow: 0px 0px 5px 6px #ffc82f  !important;
+}
+
+#bronze-button{
+    background-color: #42291f;
+    background: linear-gradient(117deg,rgba(150, 130, 126, 1) 10%, rgba(97, 81, 72, 1) 25%, rgba(99, 70, 53, 1) 36%, rgba(84, 56, 40, 1) 50%, rgba(77, 57, 44, 1) 63%, rgba(82, 68, 60, 1) 76%, rgba(87, 68, 61, 1) 93%);
     color: white;
 }
-
-th{
-    border: 2px solid rgb(255, 255, 0);
-    font-size:26px;
+#rune-button{
+    background-color: #39697e;
+    background: linear-gradient(117deg,rgba(164, 215, 237, 1) 8%, rgba(101, 170, 199, 1) 26%, rgba(90, 139, 166, 1) 37%, rgba(85, 137, 163, 1) 47%, rgba(66, 131, 158, 1) 54%, rgba(87, 151, 179, 1) 65%, rgba(127, 192, 219, 1) 76%, rgba(129, 194, 222, 1) 90%);
+    color: white;
+}
+#gilded-button{
+    background: #ffe6b0;
+    background: linear-gradient(120deg,rgba(255, 230, 176, 1) 6%, rgba(237, 182, 62, 1) 15%, rgba(212, 144, 8, 1) 26%, rgba(209, 145, 17, 1) 32%, rgba(255, 190, 59, 1) 39%, rgba(255, 224, 161, 1) 49%, rgba(255, 190, 59, 1) 57%, rgba(227, 155, 11, 1) 65%, rgba(206, 146, 21, 1) 72%, rgba(237, 182, 62, 1) 81%, rgba(255, 241, 204, 1) 95%);
 }
 
-td{
-    border: 2px solid white;
+/* subscribe image helper to limit size on tablets */
+.subscribe-img{
+    max-height: 140px;
+    width: auto;
 }
 
-#table-rank{
-    min-width: 5%;
+/* Contact Us Section */
+
+#contact-button{
+    font-family: runescape-bold;
+    background-color: #56acd1;
+    border: none;
 }
-#table-name{
-    min-width: 4fr;
+
+#contact-button:hover{
+    transform: scale(1.02);
+    transition: transform 0.1s ease;
+    color: white;
+    background-color: #366d86;
 }
