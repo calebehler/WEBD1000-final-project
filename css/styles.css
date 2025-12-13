@@ -1,3 +1,5 @@
+/* Custom fonts */
+
 @font-face{
     font-family: runescape;
     src: url("/fonts/runescape.ttf") format('truetype');
@@ -81,9 +83,6 @@ body{
 .card-body>h3{
     text-align: center;
 }
-.card-body{
-    
-}
 
 .card:hover{
     transform: scale(1.05);
@@ -140,8 +139,6 @@ body{
     font-size: 200%;
     font-weight: bolder;
     background-color: rgba(0, 0, 0, 0.836);
-    
-    
 }
 
 .category-heading{
@@ -153,7 +150,6 @@ body{
     transition-property: font-size;
     transition-duration: 0.2s;
     transition-delay: 0;
-    
 }
 
 
@@ -182,7 +178,6 @@ body{
 .subscribe-heading{
     font-family: runescape-bold;
     font-size: 250%;
-    
 }
 .subscribe-button{
     font-size: x-large;
@@ -225,7 +220,6 @@ body{
 }
 
 /* Contact Us Section */
-
 #contact-button{
     font-family: runescape-bold;
     background-color: #56acd1;
